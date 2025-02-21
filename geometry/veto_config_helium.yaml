@@ -2,12 +2,12 @@
 
 
 z: 0.0
-innerSupport: 0.8 # cm
+innerSupport: 0.0 # cm
 innerSupportMed: "Aluminum"
-outerSupport: 0.8 # cm
+outerSupport: 0.0 # cm
 outerSupportMed: "Aluminum"
 lidThickness: 0.0  # cm
-sensitiveThickness: 20  # cm
+sensitiveThickness: 2  # cm
 sensitiveMed: "Scintillator"
 decayMed: "helium"
 rib: 1.5  # cm
