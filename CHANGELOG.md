@@ -16,11 +16,18 @@ it in future.
 
 ### Fixed
 
-### Added
+* chore: Fix file endings
+* chore: trim trailing whitespace
+* Fix mismatch dimension cavern ECN3 TCC8
+* fix: use standard library to expand env
 
 ### Changed
 
+* Don't special case EOS paths (fix #566)
+
 ### Removed
+
+* fix: Remove unused, unrunnable shipPatRec_prev.py
 
 ## 25.01
 

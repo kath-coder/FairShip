@@ -136,7 +136,7 @@ parser.add_argument("--MesonMother",   dest="MM",  help="Choose DP production me
 parser.add_argument("--debug",  help="1: print weights and field 2: make overlap check", required=False, default=0, type=int, choices=range(0,3))
 parser.add_argument(
     "--helium",
-    dest="decayVolMed", 
+    dest="decayVolMed",
     help="Set Decay Volume medium to helium. NOOP, as default is helium",
     action="store_const",
     const="helium",
@@ -317,7 +317,7 @@ if simEngine == "Pythia8":
   P8gen.SetLmin((ship_geo.Chamber1.z - ship_geo.chambers.Tub1length) - ship_geo.target.z0 )
   P8gen.SetLmax(ship_geo.TrackStation1.z - ship_geo.target.z0 )
  if charmonly:
-  primGen.SetTarget(0., 0.) #vertex is setted in pythia8Generator
+  primGen.SetTarget(0., 0.) #vertex is set in pythia8Generator
   ut.checkFileExists(inputFile)
   if ship_geo.Box.gausbeam:
    primGen.SetBeam(0.,0., 0.5, 0.5) #more central beam, for hits in downstream detectors
@@ -473,9 +473,7 @@ if simEngine == "MuonBack":
  MuonBackgen.Init(inputFile,options.firstEvent,options.phiRandom)
  MuonBackgen.SetSmearBeam(5 * u.cm) # radius of ring, thickness 8mm
  if DownScaleDiMuon:
-    if inputFile[0:4] == "/eos": test = os.environ["EOSSHIP"]+inputFile
-    else: test = inputFile
-    testf = ROOT.TFile.Open(test)
+    testf = ROOT.TFile.Open(inputFile)
     if not testf.FileHeader.GetTitle().find('diMu100.0')<0:
         MuonBackgen.SetDownScaleDiMuon()   # avoid interference with boosted channels
         print("MuonBackgenerator: set downscale for dimuon on")
@@ -603,7 +601,7 @@ timer.Stop()
 rtime = timer.RealTime()
 ctime = timer.CpuTime()
 print(' ')
-print("Macro finished succesfully.")
+print("Macro finished successfully.")
 if "P8gen" in globals() :
     if (HNL): print("number of retries, events without HNL ",P8gen.nrOfRetries())
     elif (options.DarkPhoton):

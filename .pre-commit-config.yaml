@@ -5,11 +5,14 @@ repos:
   rev: v5.0.0
   hooks:
   - id: trailing-whitespace
+    exclude: .dat
   - id: end-of-file-fixer
   - id: check-yaml
   - id: check-added-large-files
+  - id: check-ast
+  - id: check-merge-conflict
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.9.4
+  rev: v0.9.6
   hooks:
   - id: ruff
     types_or: [python, pyi, jupyter]
@@ -37,6 +40,7 @@ repos:
   rev: 6.0.0
   hooks:
     - id: isort
+      args: [--profile=black]
       name: isort (python)
 - repo: https://github.com/cheshirekow/cmake-format-precommit
   rev: v0.6.13
@@ -44,3 +48,4 @@ repos:
   - id: cmake-format
 ci:
   autofix_prs: false
+  skip: [ruff, ruff-format, pydocstyle, clang-format, cpplint, cmakelint, isort, cmake-format]
