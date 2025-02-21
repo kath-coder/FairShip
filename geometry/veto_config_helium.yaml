@@ -10,7 +10,7 @@ lidThickness: 0.0  # cm
 sensitiveThickness: 2  # cm
 sensitiveMed: "Scintillator"
 decayMed: "helium"
-rib: 1.5  # cm
+rib: 0.015  # cm
 ribMed: "Aluminum"
 xstartInner : 100.0 # cm
 ystartInner : 270.0 # cm
